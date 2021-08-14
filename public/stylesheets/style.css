@@ -1,0 +1,18 @@
+.li {
+    width: 10%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color:#9398A6;
+    justify-content: center;
+}
+
+.colores{
+    background-color: #252B35
+
+}
+
+.btn{
+    color: #9398A6;
+    background-color: #31425D;
+}

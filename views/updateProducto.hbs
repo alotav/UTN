@@ -1,0 +1,33 @@
+<div class="container-fluid"> 
+    <div class="row justify-content-center align-items-center colores" style="height: 100vh;">
+        <div class="col-7">
+            <div class="d-flex justify-content-center">
+                <h4 style="color: #9398A6">Modificar Producto</h4>
+            </div>
+            <div class="colores d-flex justify-content-center align-items-center">
+                <form method="post" action="/admin/productos/update/{{producto.id}}" class=" mb-3 w-50">
+                    <div class="form-group">
+                        <input type="text" class="form-control mt-4" name="nombre" value="{{producto.nombre}}">
+                    </div>
+                    {{!-- <div class="form-group">
+                        <input type="number" class="form-control mt-4" name="id_categoria" placeholder="Ingrese id_categoria">
+                    </div> --}}
+                    
+                    <select name="id_categoria" id="id_categoria" class="form-select mt-4">
+                        <option value="{{producto.id_categoria}}"></option>
+                        {{#each categoria}}
+                        <option value="{{id}}">{{nombre}}</option>
+                        {{/each}}
+                    </select>
+
+                   <div class="form-group">
+                        <input type="number" class="form-control mt-4" name="precio" value="{{producto.precio}}">
+                    </div>
+                    <button type="submit" class="btn btn-info mt-4">Modificar Producto</button>
+                </form>
+            </div>
+                
+
+        </div>
+    </div>
+</div>

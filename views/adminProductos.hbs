@@ -1,0 +1,54 @@
+<div class="container-fluid w-100 p-5 color-light colores"></div>
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #31425D;">
+  <div class="container-fluid justify-content-between">
+    <div class="container-fluid justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-start">
+        <li class="nav-item" style="width: 10%;">
+          <a class="nav" aria-current="page" href="/"><img src="/images/mm.JPG" width="50px" style="border-radius: 30px;"></a>
+        </li>
+        <li class="nav-item li">
+          <a class="nav li" href="#contacto">Contacto</a> <!--con este boton nos dirigimos a la ubicacion de la etiqueta "name" (name=contacto) en el icono de instagram-->
+        </li>
+       <li class="nav-item li">
+          <a class="nav li" href="/nosotros" tabindex="-1" aria-disabled="true">Nosotros</a>
+        </li>
+        <li class="nav-item dropdown li">
+          <a class="nav li dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/veranito">Veranito</a></li>
+            <li><a class="dropdown-item" href="/productos">Para el frio</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Accesorios</a></li>
+          </ul>
+        </li>
+        <li class="nav-item d-flex justify-content-end" style="width: 50%;">
+          <a class="nav li" aria-current="page" style="width: 25%;" href="/registro">Registrate</a>
+          <a class="nav li" aria-current="page" style="width: 25%;" href="/login">Iniciar Sesion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<div class="d-flex flex-column colores">
+<button class="colores" style="border: none;"><a href="/admin/productos/create" class="btn btn-info" style="text-decoration: none; width: 100%;">Agregar Productos</a></button>  <!--En esta linea estamos creando una nueva subruta-->
+  <div class="d-flex row justify-content-around">
+  {{#each productos}}  <!--recorremos los productos con each para mostrarlos-->
+  <div class="card mt-4" style="width: 18rem;">
+      <div><img src="/images/{{uid}}" class="card-img-top" alt="No hay Img"></div>
+      <div class="card-body">
+          <h5 class="card-title">{{nombre}}</h5>
+          <p class="card-text">{{precio}}</p>
+          <div class="d-flex justify-content-between">
+            <a href="/admin/productos/update/{{id}}" class="btn btn-primary">Editar</a> <!--tmb creamos una nueva ruta y accedemos al id por params-->
+            <a href="/admin/productos/delete/{{id}}" class="btn btn-primary">Borrar</a> <!--tmb creamos una nueva ruta-->
+          </div>
+      </div>
+  </div>
+  {{/each}}
+  </div>
+</div>
+
